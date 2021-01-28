@@ -8,6 +8,7 @@ const port = 3000
 app.set('view engine', 'pug')
 app.set('views', './views')
 
-app.get('/', (req, res) => res.render('addAcc'));
+app.get('/', (req, res) => res.render('addAcc')   );//!-->>xem lai cach truyen tham so trong ham render
+app.get('/manage', (req, res) => res.render('manage'));
 
 app.listen(port, () => console.log(`Example app listening on port port!`));
