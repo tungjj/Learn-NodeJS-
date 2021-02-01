@@ -1,13 +1,18 @@
 extends ../layouts/common.layout.pug
 block content
-    .mb-3(class='d-flex')
-        label.form-label(for='exampleFormControlInput1') Full Name
-        input#exampleFormControlInput1.form-control(type='text', placeholder='Steve Jobs')
-    .mb-3(class='d-flex')
-        label.form-label(for='exampleFormControlInput2') Age
-        input#exampleFormControlInput1.form-control(type='number', placeholder='13')
-    .mb-3(class='d-flex')
-        label.form-label(for='exampleFormControlInput2') Email address
-        input#exampleFormControlInput1.form-control(type='email', placeholder='name@example.com')
-    .col-auto
-        button.btn.btn-primary.mb-3(type='submit') Confirm identity
+    form(action='/manage', method='POST')
+        .form-group
+            label(for='exampleInputName') Name
+            input#exampleInputName.form-control(type='text', placeholder='Enter name', name="name")
+           
+        .form-group
+            label(for='exampleInputEmail1') Email address
+            input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email', email="email")
+            small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+
+        //- .form-group
+        //-     label(for='exampleInputPassword1') Password
+        //-     input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+
+        //- button.btn.btn-primary(type='submit') Submit
+        button.btn.btn-primary(type='submit', value='submit') Submit
